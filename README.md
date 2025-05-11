@@ -25,10 +25,20 @@
 ![image](https://github.com/user-attachments/assets/005093ab-caeb-4a52-a942-375592819de3)
 ![image](https://github.com/user-attachments/assets/352d74a3-fcca-425f-bfab-84a8eaf8be30)
 
+## Example for 10M digits
 
+### 0..9:
+![image](https://github.com/user-attachments/assets/96d6ba78-3049-4bae-903c-7ad1276d036f)
 
+### 00..99
+![image](https://github.com/user-attachments/assets/029fb80f-d1c1-43ac-aae4-b2a4a1158833)
 
+### 000..999
+![image](https://github.com/user-attachments/assets/6a5adb86-5098-4286-855b-7d037adda7a6)
 
+### 0000..9999
+![image](https://github.com/user-attachments/assets/0bead6d9-38c9-422d-8c69-cabbfc0ce09f)
 
-
+### 00000..99999
+![image](https://github.com/user-attachments/assets/70cd159d-c0c7-4e60-8afe-e7fcd4eaffe9)
 
