@@ -3,11 +3,11 @@ from collections import Counter
 import os
 
 # Set precision to digits
-mp.dps = 1000000
+mp.dps = 100000
 NUM_ELEMENTS_TO_PLOT = 25
 
-def plot_frequencies_text_color(freq_data, title, xlabel, color='blue'):
-    max_width = 350  # Maximum width of the bar in characters
+def plot_frequencies_text_color(freq_data, title, xlabel, color, num_elements):
+    max_width = 345  # Maximum width of the bar in characters
     # ANSI color codes
     colors = { 'black': '\033[30m', 'red': '\033[31m', 'green': '\033[32m', 'yellow': '\033[33m', 'blue': '\033[34m', 'magenta': '\033[35m', 'cyan': '\033[36m', 'white': '\033[37m', 'reset': '\033[0m' }
     color_code = colors.get(color, colors['blue'])  # Default to blue if color not found
@@ -15,11 +15,11 @@ def plot_frequencies_text_color(freq_data, title, xlabel, color='blue'):
     labels, values = zip(*freq_data)
     max_value = max(values)
     
-    print(f"{title} - {xlabel} → Frequency shown by bar length:")
+    print(f"{title}: num_elements={num_elements} - {xlabel} → Frequency shown by bar length:")
     for label, value in freq_data:
         bar_length = int((value / max_value) * max_width)
         bar = '█' * bar_length  # Use ASCII block character
-        print(f"{label:5} | {color_code}{bar}{colors['reset']} ({value})")
+        print(f"{label:5} | {color_code}{bar}{colors['reset']} ({value}, {value / num_elements:.4%})")
 
 # Function to count frequencies of n-length digit sequences
 def count_frequencies(digits, n):
@@ -102,29 +102,27 @@ sorted_e_pentuplet_freq = e_pentuplet_freq.most_common(NUM_ELEMENTS_TO_PLOT)
 sorted_g_pentuplet_freq = g_pentuplet_freq.most_common(NUM_ELEMENTS_TO_PLOT)
 sorted_combine_pentuplet_freq = combine_pentuplet_freq.most_common(NUM_ELEMENTS_TO_PLOT)
 
-plot_frequencies_text_color(sorted_pi_single_digit_freq, 'Single Digit Freqs in Pi', 'Digits')
-plot_frequencies_text_color(sorted_e_single_digit_freq, 'Single Digit Freqs in e', 'Digits', 'green')
-plot_frequencies_text_color(sorted_g_single_digit_freq, 'Single Digit Freqs in φ', 'Digits', 'yellow')
-plot_frequencies_text_color(sorted_combine_single_digit_freq, 'Single Digit Freqs in Combined', 'Digits', 'red')
+plot_frequencies_text_color(sorted_pi_single_digit_freq, 'Single Digit Freqs in Pi', 'Digits', 'blue', mp.dps)
+plot_frequencies_text_color(sorted_e_single_digit_freq, 'Single Digit Freqs in e', 'Digits', 'green', mp.dps)
+plot_frequencies_text_color(sorted_g_single_digit_freq, 'Single Digit Freqs in φ', 'Digits', 'yellow', mp.dps)
+plot_frequencies_text_color(sorted_combine_single_digit_freq, 'Single Digit Freqs in Combined', 'Digits', 'red', mp.dps*3)
 
-plot_frequencies_text_color(sorted_pi_pair_freq, 'Digit Pairs Freqs in Pi', 'Pairs')
-plot_frequencies_text_color(sorted_e_pair_freq, 'Digit Pairs Freqs in e', 'Pairs', 'green')
-plot_frequencies_text_color(sorted_g_pair_freq, 'Digit Pairs Freqs in φ', 'Pairs', 'yellow')
-plot_frequencies_text_color(sorted_combine_pair_freq, 'Digit Pairs Freqs in Combined', 'Pairs', 'red')
+plot_frequencies_text_color(sorted_pi_pair_freq, 'Digit Pairs Freqs in Pi', 'Pairs', 'blue', mp.dps)
+plot_frequencies_text_color(sorted_e_pair_freq, 'Digit Pairs Freqs in e', 'Pairs', 'green', mp.dps)
+plot_frequencies_text_color(sorted_g_pair_freq, 'Digit Pairs Freqs in φ', 'Pairs', 'yellow', mp.dps)
+plot_frequencies_text_color(sorted_combine_pair_freq, 'Digit Pairs Freqs in Combined', 'Pairs', 'red', mp.dps*3)
 
-plot_frequencies_text_color(sorted_pi_triplet_freq, 'Triple Digits Freqs in Pi', 'Triplets')
-plot_frequencies_text_color(sorted_e_triplet_freq, 'Triple Digits Freqs in e', 'Triplets', 'green')
-plot_frequencies_text_color(sorted_g_triplet_freq, 'Triple Digits Freqs in φ', 'Triplets', 'yellow')
-plot_frequencies_text_color(sorted_combine_triplet_freq, 'Triple Digits Freqs in Combined', 'Triplets', 'red')
+plot_frequencies_text_color(sorted_pi_triplet_freq, 'Triple Digits Freqs in Pi', 'Triplets', 'blue', mp.dps)
+plot_frequencies_text_color(sorted_e_triplet_freq, 'Triple Digits Freqs in e', 'Triplets', 'green', mp.dps)
+plot_frequencies_text_color(sorted_g_triplet_freq, 'Triple Digits Freqs in φ', 'Triplets', 'yellow', mp.dps)
+plot_frequencies_text_color(sorted_combine_triplet_freq, 'Triple Digits Freqs in Combined', 'Triplets', 'red', mp.dps*3)
 
-plot_frequencies_text_color(sorted_pi_quadruplet_freq, 'Quadruple Digits Freqs in Pi', 'Quadruplets')
-plot_frequencies_text_color(sorted_e_quadruplet_freq, 'Quadruple Digits Freqs in e', 'Quadruplets', 'green')
-plot_frequencies_text_color(sorted_g_quadruplet_freq, 'Quadruple Digits Freqs in φ', 'Quadruplets', 'yellow')
-plot_frequencies_text_color(sorted_combine_quadruplet_freq, 'Quadruple Digits Freqs in Combined', 'Quadruplets', 'red')
+plot_frequencies_text_color(sorted_pi_quadruplet_freq, 'Quadruple Digits Freqs in Pi', 'Quadruplets', 'blue', mp.dps)
+plot_frequencies_text_color(sorted_e_quadruplet_freq, 'Quadruple Digits Freqs in e', 'Quadruplets', 'green', mp.dps)
+plot_frequencies_text_color(sorted_g_quadruplet_freq, 'Quadruple Digits Freqs in φ', 'Quadruplets', 'yellow', mp.dps)
+plot_frequencies_text_color(sorted_combine_quadruplet_freq, 'Quadruple Digits Freqs in Combined', 'Quadruplets', 'red', mp.dps*3)
 
-plot_frequencies_text_color(sorted_pi_pentuplet_freq, 'Pentuple Digits Freqs in Pi', 'Pentuplets')
-plot_frequencies_text_color(sorted_e_pentuplet_freq, 'Pentuple Digits Freqs in e', 'Pentuplets', 'green')
-plot_frequencies_text_color(sorted_g_pentuplet_freq, 'Pentuple Digits Freqs in φ', 'Pentuplets', 'yellow')
-plot_frequencies_text_color(sorted_combine_pentuplet_freq, 'Pentuple Digits Freqs in Combined', 'Pentuplets', 'red')
-
-# print("Pi digits: ", pi_str[:mp.dps])  # Print first digits for verification
+plot_frequencies_text_color(sorted_pi_pentuplet_freq, 'Pentuple Digits Freqs in Pi', 'Pentuplets', 'blue', mp.dps)
+plot_frequencies_text_color(sorted_e_pentuplet_freq, 'Pentuple Digits Freqs in e', 'Pentuplets', 'green', mp.dps)
+plot_frequencies_text_color(sorted_g_pentuplet_freq, 'Pentuple Digits Freqs in φ', 'Pentuplets', 'yellow', mp.dps)
+plot_frequencies_text_color(sorted_combine_pentuplet_freq, 'Pentuple Digits Freqs in Combined', 'Pentuplets', 'red', mp.dps*3)
