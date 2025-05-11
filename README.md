@@ -4,6 +4,7 @@
 - e (Euler's number): e ≈ 2.71828 e≈2.71828
 - φ (phi, the golden ratio): ϕ ≈ 1.61803 ϕ≈1.61803
 
+# Example for 1M digits
 ![image](https://github.com/user-attachments/assets/80a35715-7c84-4641-a305-da000e2e5a10)
 
 ![image](https://github.com/user-attachments/assets/ba445710-2b1c-4915-8e9e-2c7481d9aadb)
