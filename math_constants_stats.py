@@ -3,8 +3,8 @@ from collections import Counter
 import os
 
 # Set precision to digits
-mp.dps = 100000
-NUM_ELEMENTS_TO_PLOT = 25
+mp.dps = 1000000
+NUM_ELEMENTS_TO_PLOT = 20
 
 def plot_frequencies_text_color(freq_data, title, xlabel, color, num_elements):
     max_width = 345  # Maximum width of the bar in characters
