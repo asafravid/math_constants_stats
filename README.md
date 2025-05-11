@@ -1,5 +1,8 @@
 # math_constants_stats
-(Combined) Digit Statistics on math constants
+(Combined) Digit Statistics on math constants π, (Euler's number) and φ (phi, the golden ratio):
+- π (pi): π ≈ 3.14159 π≈3.14159
+- e (Euler's number): e ≈ 2.71828 e≈2.71828
+- φ (phi, the golden ratio): ϕ ≈ 1.61803 ϕ≈1.61803
 
 ![image](https://github.com/user-attachments/assets/80a35715-7c84-4641-a305-da000e2e5a10)
 
